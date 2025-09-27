@@ -9,7 +9,9 @@
   --White: hsl(0, 0%, 100%);
 }
 
-* {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -49,6 +51,7 @@ body {
 }
 
 main {
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,7 +63,8 @@ main {
   border-radius: 15px;
   background-color: var(--Blue900);
   box-shadow: 0 25px 50px 0 rgba(#000, 0.953);
-  padding: 24px;
+
+  padding: 24px 24px 32px 24px;
 }
 .card__img-container {
   position: relative;
@@ -116,7 +120,7 @@ main {
 
 .card__heading {
   margin-top: 24px;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
   color: var(--White);
   transition: all 0.3s ease;
 }
@@ -128,7 +132,7 @@ main {
 
 .card__desc {
   color: var(--Blue500);
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 
 .eth {
@@ -150,7 +154,8 @@ main {
   width: 100%;
   height: 1px;
   background-color: var(--Blue800);
-  margin: 16px 0;
+  margin-bottom: 16px;
+  margin-top: 24px;
 }
 
 .card__footer {
