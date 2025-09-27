@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+:root {
+  --Blue500: hsl(215, 51%, 70%);
+  --Cyan400: hsl(178, 100%, 50%);
+  --Blue950: hsl(217, 54%, 11%);
+  --Blue900: hsl(216, 50%, 16%);
+  --Blue800: hsl(215, 32%, 27%);
+  --White: hsl(0, 0%, 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.text-preset-1 {
+  font: 600 22px/28px "Outfit", sans-serif;
+  letter-spacing: 0px;
+}
+
+.text-preset-2 {
+  font: 300 18px/26px "Outfit", sans-serif;
+  letter-spacing: 0px;
+}
+
+.text-preset-3 {
+  font: 400 16px/20px "Outfit", sans-serif;
+  letter-spacing: 0px;
+}
+
+.text-preset-4 {
+  font: 600 16px/20px "Outfit", sans-serif;
+  letter-spacing: 0px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  background-color: var(--Blue950);
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.card {
+  max-width: 327px;
+  font-family: "Outfit", sans-serif;
+  border-radius: 15px;
+  background-color: var(--Blue900);
+  box-shadow: 0 25px 50px 0 rgba(#000, 0.953);
+  padding: 24px;
+}
+.card__img-container {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card__img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect overlay */
+.card__img-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--Cyan400);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 8px;
+}
+
+/* View icon */
+.card__view-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+/* Hover effects */
+.card__img-container:hover::after {
+  opacity: 0.5;
+}
+
+.card__img-container:hover .card__view-icon {
+  opacity: 1;
+}
+
+.card__img-container:hover .card__img {
+  transform: scale(1.02);
+}
+
+.card__heading {
+  margin-top: 24px;
+  margin-bottom: 12px;
+  color: var(--White);
+  transition: all 0.3s ease;
+}
+
+.card__heading:hover {
+  cursor: pointer;
+  color: var(--Cyan400);
+}
+
+.card__desc {
+  color: var(--Blue500);
+  margin-bottom: 16px;
+}
+
+.eth {
+  justify-content: space-between;
+}
+.ethleft,
+.ethright {
+  align-items: center;
+  gap: 6px;
+}
+.ethleft p {
+  color: var(--Cyan400);
+}
+.ethright p {
+  color: var(--Blue500);
+}
+
+.card__line {
+  width: 100%;
+  height: 1px;
+  background-color: var(--Blue800);
+  margin: 16px 0;
+}
+
+.card__footer {
+  gap: 16px;
+  align-items: center;
+}
+
+.card__footer p {
+  color: var(--Blue500);
+}
+
+.author {
+  transition: all 0.3s ease;
+  color: var(--White);
+}
+
+.author:hover {
+  cursor: pointer;
+  color: var(--Cyan400);
+}
+
+.image-avatar {
+  width: 33px;
+  height: 33px;
+  border-radius: 100%;
+  border: 1px solid var(--White);
+}
+
+@media (min-width: 768px) {
+  .card {
+    max-width: 350px;
+  }
+}
